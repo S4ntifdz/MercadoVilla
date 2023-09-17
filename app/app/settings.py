@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'stock',
     'cart',
     'signup',
-    'web',
+    
 ]
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
