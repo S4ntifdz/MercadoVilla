@@ -55,7 +55,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "MERCADOVILLA",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "books/img/logo.png",
+    # "site_logo": "books/img/logo.png",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": None,
@@ -171,6 +171,17 @@ JAZZMIN_SETTINGS = {
 
 
 }
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "theme": "darkly",
+}
+
+
+
+
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
