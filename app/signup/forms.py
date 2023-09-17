@@ -7,6 +7,7 @@ class SignUpStep1Form(UserCreationForm):
     class Meta:
         model = ClientModel
         fields = '__all__'
+        
 
 class SignUpStep2Form(forms.ModelForm):
     class Meta:
