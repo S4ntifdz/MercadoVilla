@@ -1,31 +1,36 @@
-from django.shortcuts import render, redirect
-from .forms import SignUpStep1Form, SignUpStep2Form
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.views import View
+from django.template import loader
+from signup.forms import SignUpForm
 from clients.models import ClientModel
 
-def signup_step1(request):
-    if request.method == 'POST':
-        form = SignUpStep1Form(request.POST)
-        if form.is_valid():
-            request.session['step1_data'] = form.cleaned_data
-            return redirect('signup_step2')  # Redirige al segundo paso
-    else:
-        form = SignUpStep1Form()
-    
-    return render(request, 'signup_step1.html', {'form': form})
+class SignUpView(View):
 
-def signup_step2(request):
-    step1_data = request.session.get('step1_data')
-    if not step1_data:
-        return redirect('signup_step1')  # Redirige de nuevo al primer paso si no hay datos del primer paso
+    def get(self, request):
+        template = loader.get_template("signup.html")
 
-    if request.method == 'POST':
-        form = SignUpStep2Form(request.POST, request.FILES)
-        if form.is_valid():
-            user_data = {**step1_data, **form.cleaned_data}
-            ClientModel.objects.create_user(**user_data)
-            del request.session['step1_data']  # Limpia los datos del primer paso
-            return redirect('signup_success')  # Redirige a una página de éxito o a donde lo necesites
-    else:
-        form = SignUpStep2Form()
+        context = {
+            "form": SignUpForm
+        }
+        return HttpResponse(template.render(context, request))
     
-    return render(request, 'signup_step2.html', {'form': form})
+    def post(self, request):
+        
+        data = {
+            "email": request.POST.get("email"),
+            "username": request.POST.get("email"),
+            "password": request.POST.get("password1"),
+            "first_name":request.POST.get("first_name"),
+            "last_name": request.POST.get("last_name"),
+            "cuit": request.POST.get("cuit"),
+            "business_line_interes": request.POST.get("business_line_interes"),
+            "state": request.POST.get("state"),
+            "city": request.POST.get("city"),
+            "postal_code": request.POST.get("postal_code"),
+            "phone_number": request.POST.get("phone_number"),
+        }
+
+        ClientModel.objects.create_user(**data)
+        template = loader.get_template("signup.html")
+        return HttpResponse(template.render(data, request))
