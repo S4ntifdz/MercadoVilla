@@ -1,19 +1,32 @@
-from django.contrib.auth import login
-from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.views import View
-from .forms import SignUpForm
+from django.template import loader
+from clients.models import ClientModel
+from signup.forms import SignUpForm
 
 class SignUpView(View):
-    template_name = 'registration/signup.html'
-
     def get(self, request):
-        form = SignUpForm()
-        return render(request, self.template_name, {'form': form})
-
+        template = loader.get_template('registration/signup.html')
+        context = {
+            "form": SignUpForm
+        }
+        return HttpResponse(template.render(context, request))
+    
     def post(self, request):
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('../templates/registration/base.html')  
-        return render(request, self.template_name, {'form': form})
+        data = {
+            "email": request.POST.get("email"),
+            "username": request.POST.get("username"),
+            "password": request.POST.get("password"),
+            "first_name": request.POST.get("first_name"),
+            "last_name": request.POST.get("last_name"),
+            "cuit": request.POST.get("cuit"),
+            "business_line": request.POST.get("business_line"),
+            "business_line_interes": request.POST.get("business_line_interes"),
+            "is_seller": request.POST.get("is_seller") == "on",
+            "is_buyer": request.POST.get("is_buyer") == "on",
+            "phone_number": request.POST.get("phone_number")
+        }
+
+        ClientModel.objects.create_user(**data)
+        template = loader.get_template("registration/login.html")
+        return HttpResponse(template.render(data, request))
