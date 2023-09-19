@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+{% block content %}      
+
+<!--Login--> 
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    
+    {{ login_form.username.label_tag }} <!-- Etiqueta del campo de usuario -->
+    {{ login_form.username }} <!-- Campo de usuario -->
+    
+    {{ login_form.password.label_tag }} <!-- Etiqueta del campo de contraseña -->
+    {{ login_form.password }} <!-- Campo de contraseña -->
+    
+    <button class="btn btn-primary" type="submit">Mande noma</button>
+  </form>
+  <p class="text-center">No tenes cuenta rey? <a href="/signup/">Create una aca</a>.</p>
+</div>
+{% endblock %}
+
+
+
