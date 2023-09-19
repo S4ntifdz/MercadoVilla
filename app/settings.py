@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     
 ]
-CRISPY_TEMPLATE_PACK = 'Bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
