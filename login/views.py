@@ -18,8 +18,8 @@ class LoginView(View):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
-                return redirect('')  # Replace with the appropriate URL
+                #TODO SE MUESTRA EN EL ADMIN messages.info(request, f"You are now logged in as {username}.")
+                return redirect('base.html')  
             else:
                 messages.error(request, "Invalid username or password.")
         else:
