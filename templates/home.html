@@ -78,10 +78,10 @@
 
           <li><a href="#">Categorias &nbsp;<i class="fa fa-caret-down"></i></a>
             <ul>
-              <li><a href="#!"> Tecnicos</a></li>
-              <li><a href="#!"> Literatura </a></li>
-              <li><a href="#!"> Fantasia</a></li>
-              <li><a href="#!"> Terror</a></li>
+              <li><a href="#!"> Ferreteria</a></li>
+              <li><a href="#!"> Almacen </a></li>
+              <li><a href="#!"> Autopartes </a></li>
+              <li><a href="#!"> Otros </a></li>
             </ul>
           </li>
 
@@ -104,11 +104,7 @@
     <!---------- Slider HTML Code Ends --------->
 
     <!---------- EMPIEZA EL BANNER ---------> {% endcomment %}
-    <div class="slider">
-      <div class="slider-content">
-        <img src="backtoschool.png" alt="Back to School">
-      </div>
-    </div>
+
 {% comment %} 
     <!---------- TERMINA EL BANNER --------->
 
@@ -145,6 +141,10 @@
                     <span class="product-discounted-price">{{p.price | intcomma}}</span>
                     <span class="product-original-price">{{p.price | intcomma}}</span>
                     <span class="product-discount">50%OFF</span>
+                    </p>
+                <p class ="product-seller">
+                    <span class="product-seller-name">Vendedor: {{p.user}}</span>
+                </p>
                   </div>
                 </div>
               </div>
