@@ -21,7 +21,7 @@ class LoginView(View):
             
                 login(request, user)
                 #TODO SE MUESTRA EN EL ADMIN messages.info(request, f"You are now logged in as {username}.")
-                return redirect('base.html')  
+                return redirect('/web/')  
             else:
                 messages.error(request, "Invalid username or password.")
         else:

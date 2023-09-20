@@ -292,7 +292,7 @@ html {
 
 .word-slide span {
   display: inline-block;
-  animation: slideLeft 10s linear infinite;
+  animation: slideLeft 20s linear infinite;
   transform: translateX(100vw); 
   position: relative; 
 }

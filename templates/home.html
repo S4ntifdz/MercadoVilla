@@ -45,10 +45,16 @@
               <i class="fa fa-heart-o" aria-hidden="true"></i>
               <a class="head1mr" href="#">Lista de deseos </a>
             </li>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="#">Perfil de {{ user.username |capfirst }}</a>
+            </li>
+            {% else %}
             <li>
               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <a href="#"> Iniciar sesion </a>
+              <a href="/login/"> Iniciar sesion </a>
             </li>
+            {% endif %}
             <li>
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <a href="#"> Carro (0)</a>
@@ -151,7 +157,6 @@
             </div>
 {% endfor %}
 
-   
                                   </div>
 
                                 </div>
