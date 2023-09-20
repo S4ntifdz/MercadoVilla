@@ -24,6 +24,7 @@ urlpatterns = [
     #aca hago el enlace entre la url y que esa url apunte al directiorio fisico
     path("signup/", include("signup.urls")),
     path('login/', include('login.urls')),
+    path('web/', include('web.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
 if settings.DEBUG: #aca pregunto si estoy en debug, ya que nunca me dejaria hacerlo en produccion
