@@ -26,6 +26,7 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('web/', include('web.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("user/", include("user.urls")),
 ]
 if settings.DEBUG: #aca pregunto si estoy en debug, ya que nunca me dejaria hacerlo en produccion
     from django.conf.urls.static import static

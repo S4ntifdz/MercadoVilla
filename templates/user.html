@@ -3,7 +3,7 @@
     {% comment %} {% load static %} #TODO ver que hace si importo el static {% endcomment %}
     <title>Website Site</title>
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/home.css">
     {% load humanize %}
   </head>
   <body>
@@ -26,7 +26,7 @@
     <div class="width-100 search-panel">
       <div class="container">
         <div class="width-20">
-          <img src="../static/img/mercadovilla logo.png" class="product-img" alt="[Logotipo]">
+          <img src class="logo" alt="[Logotipo]">
         </div>
         <div class="width-50">
           <input class="search-textbox" type="text"
@@ -102,76 +102,15 @@
         </ul>
       </div>
     </div>
-
-    {% comment %} <!---------- TERMINA NAVBAR --------->
-
-    <!---------- Slider HTML Code Starts --------->
-
-    <!---------- Slider HTML Code Ends --------->
-
-    <!---------- EMPIEZA EL BANNER ---------> {% endcomment %}
-
-{% comment %} 
-    <!---------- TERMINA EL BANNER --------->
-
-    <!--------- EMPIEZA SECCION DE PRODUCTOS -------------> {% endcomment %}
-
-    <div class="carousel-container">
-      <div class="carousel">
-        <!-- Primer slide -->
-        <div class="slide">
-            {% csrf_token %}
-{% for p in products%}
-          <div class="width-25">
-            <div class="product-section">
-              <div class="product-border">
-                <div class="product-img-center">
-                  <a href="#">
-                    <img class="product-img" src="{{ p.imagen.url }}">
-                  </a>
-                </div>
-
-                <div>
-                  <p class="product-name">
-                    <a href="#">{{p.name_product | capfirst}}</a>
-                  </p>
-                  <p class="product-rating">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <span>(5)</span>
-                  </p>
-                  <p class="product-price">
-                    <span class="product-discounted-price">{{p.price | intcomma}}</span>
-                    <span class="product-original-price">{{p.price | intcomma}}</span>
-                    <span class="product-discount">50%OFF</span>
-                    </p>
-                <p class ="product-seller">
-                    <span class="product-seller-name">Vendedor: {{p.user}}</span>
-                </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-{% endfor %}
-
-                                  </div>
-
-                                </div>
-                                <button class="arrow left-arrow"><ion-icon
-                                    name="caret-back-outline"></ion-icon></button>
-                                <button class="arrow right-arrow"><ion-icon
-                                    name="caret-forward-outline"></ion-icon></button>
-                              </div></div>
-
-                            <!-- 
-
-
-
-                            <!---------- TERMINA SECCION DE PRODUCTOS --------->
-
+{% comment %} aca empieza la seccion del usuario {% endcomment %}
+<div class = "">
+  <div class="parent">
+    <div class="div1"> <h1>HOLA {{user.username}} </h1> </div>
+    <div class="div2"> <h1>HOLA {{user.username}} </h1></div>
+    <div class="div3"> </div>
+    </div>
+</div>
+{% comment %} aca TERMINA la seccion del usuario {% endcomment %}
                             <!-- EMPIEZA SECCION DE VENTAJAS -->
                             <div class="width-100 margin-top-50 feature-sect">
                               <div class="container">
