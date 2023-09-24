@@ -6,7 +6,7 @@ class ProductView(View):
     
     def get(self, request):  
         products = StockProduct.objects.all()
-        return render(request, "home.html", {"products": products})
+        return render(request, "products.html", {"products": products})
     
     def post(self, request):
         pass
