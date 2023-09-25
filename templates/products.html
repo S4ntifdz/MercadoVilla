@@ -7,6 +7,7 @@
 <div class="slide">
 {% csrf_token %}
 {% if user.is_authenticated  %}
+<h2> Productos de categoria {{user.business_line_interes}} que podrían interesarte: </h2>
 {% for p in products%}
         <div class="width-25">
             <div class="product-section">
@@ -38,22 +39,25 @@
                     <span class="product-seller-name">Vendedor: {{p.user}}</span>
                 </p>
                 <p class ="product-seller">
-                    <span class="product-seller-name">categoria: {{p.business_line}}</span>
+                    <span class="product-seller-name">Categoria: {{p.business_line}}</span>
                 </p>
                 </div>
                 </div>
             </div>
         </div>
+        
 {% endfor %}
 </div>
 </div>
+<br><br><br>
+<h3>Otras categorias </h3>
 {% endif %}
-{% block content2 %}
+
 <div class="carousel-container">
     <div class="carousel">
     <!-- Primer slide -->
     <div class="slide">
-    <h3>Productos de otras categorias que pueden interesarte: </h3>
+    
     <br><br><br>
 {% for p in varios%}
         <div class="width-25">
@@ -99,7 +103,7 @@
 <button class="arrow left-arrow"><ion-icon name="caret-back-outline"></ion-icon></button>
 <button class="arrow right-arrow"><ion-icon name="caret-forward-outline"></ion-icon></button>
 </div></div>
-{% endblock content2 %}
+
 
 
 {%endblock content %}

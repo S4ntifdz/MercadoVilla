@@ -10,8 +10,14 @@ class IndexView(View):
     def get(self, request): 
         template = loader.get_template("products.html") 
         user = request.user
-        products = StockProduct.objects.filter(business_line=request.user.business_line_interes)
         varios = StockProduct.objects.all()
+        
+        if user.is_anonymous:
+            products = varios
+        else:
+            products = StockProduct.objects.filter(business_line=request.user.business_line_interes) 
+        
+        
         context = {
             "products": products,
             "varios": varios,
