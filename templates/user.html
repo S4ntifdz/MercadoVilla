@@ -1,8 +1,9 @@
 {%extends "home.html"%}
 {% load humanize %}
 
-{% comment %} aca empieza la seccion del usuario {% endcomment %}
+
 {%block content%}
+
 <div class = "">
   <div class="parent">
     <div class="div1"> <h1>HOLA {{user.username}} </h1> </div>
@@ -10,5 +11,5 @@
     <div class="div3"> </div>
     </div>
 </div>
-{% comment %} aca TERMINA la seccion del usuario {% endcomment %}
+<p class="text-center">Cerrar sesion <a href="{% url 'logout' %}"> <ion-icon name="arrow-round-back"></ion-icon></a>.</p>
 {%endblock content%}
