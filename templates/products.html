@@ -6,6 +6,7 @@
 <!-- Primer slide -->
 <div class="slide">
 {% csrf_token %}
+{% if user.is_authenticated  %}
 {% for p in products%}
         <div class="width-25">
             <div class="product-section">
@@ -36,6 +37,57 @@
                 <p class ="product-seller">
                     <span class="product-seller-name">Vendedor: {{p.user}}</span>
                 </p>
+                <p class ="product-seller">
+                    <span class="product-seller-name">categoria: {{p.business_line}}</span>
+                </p>
+                </div>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+</div>
+</div>
+{% endif %}
+{% block content2 %}
+<div class="carousel-container">
+    <div class="carousel">
+    <!-- Primer slide -->
+    <div class="slide">
+    <h3>Productos de otras categorias que pueden interesarte: </h3>
+    <br><br><br>
+{% for p in varios%}
+        <div class="width-25">
+            <div class="product-section">
+                <div class="product-border">
+                <div class="product-img-center">
+                <a href="#">
+                    <img class="product-img" src="{{ p.imagen.url }}">
+                </a>
+            </div>
+
+            <div>
+                <p class="product-name">
+                <a href="#">{{p.name_product | capfirst}}</a>
+                </p>
+                <p class="product-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span>(5)</span>
+                </p>
+                <p class="product-price">
+                    <span class="product-discounted-price">{{p.price | intcomma}}</span>
+                    <span class="product-original-price">{{p.price | intcomma}}</span>
+                    <span class="product-discount">50%OFF</span>
+                    </p>
+                <p class ="product-seller">
+                    <span class="product-seller-name">Vendedor: {{p.user}}</span>
+                </p>
+                <p class ="product-seller">
+                    <span class="product-seller-name">categoria: {{p.business_line}}</span>
+                </p>
                 </div>
                 </div>
             </div>
@@ -47,4 +99,8 @@
 <button class="arrow left-arrow"><ion-icon name="caret-back-outline"></ion-icon></button>
 <button class="arrow right-arrow"><ion-icon name="caret-forward-outline"></ion-icon></button>
 </div></div>
-{% endblock content %}
+{% endblock content2 %}
+
+
+{%endblock content %}
+
