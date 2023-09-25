@@ -5,5 +5,5 @@ from django.urls import include
 urlpatterns = [
     path('', views.LoginView.as_view(), name='login'),  
     path('logout/', logout_then_login, name='logout'),
-    path('', include('web.urls'))
+
 ]

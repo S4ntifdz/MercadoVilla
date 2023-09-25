@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 #.................................
 from django.conf import settings
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +29,7 @@ urlpatterns = [
     path('web/', include('web.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
     path("user/", include("user.urls")),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]
 if settings.DEBUG: #aca pregunto si estoy en debug, ya que nunca me dejaria hacerlo en produccion
     from django.conf.urls.static import static

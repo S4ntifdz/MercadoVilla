@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.views import View
 from django.template import loaders
- 
+
 class LoginView(View):
     def get(self, request):
         form = AuthenticationForm()
@@ -21,10 +21,9 @@ class LoginView(View):
             
                 login(request, user)
                 #TODO SE MUESTRA EN EL ADMIN messages.info(request, f"You are now logged in as {username}.")
-                return redirect('web/')  
-
+                return redirect('/web/')  
             else:
-                messages.error(request, "Usuario y/o Contraseñas invalidos.")
+                pass
         else:
-            messages.error(request, "Usuario y/o Contraseñas invalidos.")
+            pass
         return render(request, 'registration/login.html', {'login_form': form})
