@@ -20,8 +20,8 @@ class StockProduct(models.Model):
     code_product = models.CharField(max_length=10, unique=True)
     expiration = models.DateTimeField(null = True, default=None)    
 
-    # class Meta:
-    #     unique_together = ("client","code_product")#cualquier relacion entre cliente y codigo tiene que ser unica
+    class Meta:
+        unique_together = ("user","code_product")#cualquier relacion entre cliente y codigo tiene que ser unica
     
     def __str__(self): 
         return f"{self.name_product} | Seller:  {self.user} "
