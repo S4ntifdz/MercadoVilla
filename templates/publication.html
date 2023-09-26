@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{% load humanize%}
+{% block content %}
+<div class="width-25">
+    <div class="product-section">
+        <div class="product-border">
+            <div class="product-img-center">
+                <img class="product-img" src="{{ publication_product.imagen.url }}">
+            </div>
+
+            <div>
+                <p class="product-name">
+                    <a href="#">{{ publication_product.name_product | capfirst }}</a>
+                </p>
+                <!-- Resto de los detalles del producto -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+{% endfor %}
+{% endblock %}
