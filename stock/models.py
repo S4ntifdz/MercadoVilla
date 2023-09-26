@@ -17,7 +17,7 @@ class StockProduct(models.Model):
     name_product = models.CharField(max_length=140)
     description = models.TextField(max_length=1200)
     imagen = models.ImageField(upload_to="productos", null = True)
-    code_product = models.CharField(max_length=10, unique=True)
+    code_product = models.CharField(max_length=10, unique=True) #pk
     expiration = models.DateTimeField(null = True, default=None)    
 
     class Meta:

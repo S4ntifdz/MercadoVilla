@@ -18,7 +18,6 @@ class LoginView(View):
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None: 
-            
                 login(request, user)
                 #TODO SE MUESTRA EN EL ADMIN messages.info(request, f"You are now logged in as {username}.")
                 return redirect('/web/')  

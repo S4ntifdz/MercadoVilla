@@ -1,6 +1,10 @@
 {% extends "home.html" %}
-{% load humanize %}
+
+
 {% block content %}
+{% load humanize %}
+
+
 <div class="carousel-container">
 <div class="carousel">
 <!-- Primer slide -->
@@ -90,7 +94,7 @@
                     <span class="product-seller-name">Vendedor: {{p.user}}</span>
                 </p>
                 <p class ="product-seller">
-                    <span class="product-seller-name">categoria: {{p.business_line}}</span>
+                    <span class="product-seller-name">Categoria: {{p.business_line}}</span>
                 </p>
                 </div>
                 </div>

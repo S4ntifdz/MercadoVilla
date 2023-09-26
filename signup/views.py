@@ -24,7 +24,8 @@ class SignUpView(View):
             "business_line_interes": request.POST.get("business_line_interes"),
             "is_seller": request.POST.get("is_seller") == "on",
             "is_buyer": request.POST.get("is_buyer") == "on",
-            "phone_number": request.POST.get("phone_number")
+            "phone_number": request.POST.get("phone_number"),
+            "avatar": request.POST.get("avatar"),
         }
 
         ClientModel.objects.create_user(**data)

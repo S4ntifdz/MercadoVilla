@@ -1,9 +1,11 @@
 <html>
   <head>
-    {% comment %} {% load static %} #TODO ver que hace si importo el static {% endcomment %}
+    {% load static %}
     <title>Website Site</title>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" />
+    <script src="{% static 'js/scripts.js' %}"></script>
     {% load humanize %}
   </head>
   <body>
@@ -17,8 +19,8 @@
         <div class="word-slide">
           <span>HOY 25% DE DESCUENTO EN GUARDABARROS DE FALCON</span>
         </div>
-        </div>
       </div>
+    </div>
 
     {% comment %} <!---------- TTERMINA TOPE DEL HADER --------->
 
@@ -26,7 +28,8 @@
     <div class="width-100 search-panel">
       <div class="container">
         <div class="width-20">
-          <img src="../static/img/mercadovilla logo.png" class="product-img" alt="[Logotipo]">
+          <img src="../static/img/mercadovilla logo.png" class="product-img"
+            alt="[Logotipo]">
         </div>
         <div class="width-50">
           <input class="search-textbox" type="text"
@@ -111,143 +114,141 @@
 
     <!---------- EMPIEZA EL BANNER ---------> {% endcomment %}
 
-{% comment %} 
+    {% comment %}
     <!---------- TERMINA EL BANNER --------->
 
     <!--------- EMPIEZA SECCION DE PRODUCTOS -------------> {% endcomment %}
-{% block content %}
+    {% block content %}
 
+    {% endblock content %}
 
-{% endblock content %}
-<!---------- TERMINA SECCION DE PRODUCTOS --------->
+    <!---------- TERMINA SECCION DE PRODUCTOS --------->
 
-                            <!-- EMPIEZA SECCION DE VENTAJAS -->
-                            <div class="width-100 margin-top-50 feature-sect">
-                              <div class="container">
-                                <div class="width-20 featured-padding">
-                                  <div class="featured-border">
-                                    <div class="width-20 featured-content">
-                                      <i class="fa fa-truck" aria-hidden="true"></i>
-                                    </div>
-                                    <div
-                                      class="width-80 featured-content margin-top-8">
-                                      <h4>Delivery Instantaneo</h4>
-                                      <p>Para entregas dentro de Rosario</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="width-20">
-                                  <div class="featured-border">
-                                    <div class="featured-bord">
-                                      <div class="width-20 featured-content">
-                                        <i class="fa fa-circle-o"
-                                          aria-hidden="true"></i>
-                                      </div>
-                                      <div
-                                        class="width-80 featured-content margin-top-8">
-                                        <h4>Soporte Online 24/7</h4>
-                                        <p>Te acompañamos en todo momento! </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="width-20">
-                                  <div class="featured-border">
-                                    <div class="width-20 featured-content">
-                                      <i class="fa fa-life-ring"
-                                        aria-hidden="true"></i>
-                                    </div>
-                                    <div
-                                      class="width-80 featured-content margin-top-8">
-                                      <h4>Compra seguro</h4>
-                                      <p>1 semana para devolver post compra!</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="width-20">
-                                  <div class="featured-border">
-                                    <div class="width-20 featured-content">
-                                      <i class="fa fa-gift" aria-hidden="true"></i>
-                                    </div>
-                                    <div
-                                      class="width-80 featured-content margin-top-8">
-                                      <h4>Descuentos por puntos</h4>
-                                      <p>Acumula puntos y obten descuentos
-                                        exclusivos!</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="width-20">
-                                  <div class="featured-border">
-                                    <div class="width-20 featured-content">
-                                      <i class="fa fa-credit-card"
-                                        aria-hidden="true"></i>
-                                    </div>
-                                    <div
-                                      class="width-80 featured-content margin-top-8">
-                                      <h4>Todos los medios de pagos</h4>
-                                      <p>Aceptamos todas las tarjetas!</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!---------- TERMINA SECCION DE VENTAJAS --------->
+    <!-- EMPIEZA SECCION DE VENTAJAS -->
+    <div class="width-100 margin-top-50 feature-sect">
+      <div class="container">
+        <div class="width-20 featured-padding">
+          <div class="featured-border">
+            <div class="width-20 featured-content">
+              <i class="fa fa-truck" aria-hidden="true"></i>
+            </div>
+            <div
+              class="width-80 featured-content margin-top-8">
+              <h4>Delivery Instantaneo</h4>
+              <p>Para entregas dentro de Rosario</p>
+            </div>
+          </div>
+        </div>
+        <div class="width-20">
+          <div class="featured-border">
+            <div class="featured-bord">
+              <div class="width-20 featured-content">
+                <i class="fa fa-circle-o"
+                  aria-hidden="true"></i>
+              </div>
+              <div
+                class="width-80 featured-content margin-top-8">
+                <h4>Soporte Online 24/7</h4>
+                <p>Te acompañamos en todo momento! </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="width-20">
+          <div class="featured-border">
+            <div class="width-20 featured-content">
+              <i class="fa fa-life-ring"
+                aria-hidden="true"></i>
+            </div>
+            <div
+              class="width-80 featured-content margin-top-8">
+              <h4>Compra seguro</h4>
+              <p>1 semana para devolver post compra!</p>
+            </div>
+          </div>
+        </div>
+        <div class="width-20">
+          <div class="featured-border">
+            <div class="width-20 featured-content">
+              <i class="fa fa-gift" aria-hidden="true"></i>
+            </div>
+            <div
+              class="width-80 featured-content margin-top-8">
+              <h4>Descuentos por puntos</h4>
+              <p>Acumula puntos y obten descuentos
+                exclusivos!</p>
+            </div>
+          </div>
+        </div>
+        <div class="width-20">
+          <div class="featured-border">
+            <div class="width-20 featured-content">
+              <i class="fa fa-credit-card"
+                aria-hidden="true"></i>
+            </div>
+            <div
+              class="width-80 featured-content margin-top-8">
+              <h4>Todos los medios de pagos</h4>
+              <p>Aceptamos todas las tarjetas!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------- TERMINA SECCION DE VENTAJAS --------->
 
-                            <!-- EMPIEZA FOOTER -->
-                            <footer class="footer">
-                              <div class="container">
-                                <div class="footer-content">
-                                  <div class="footer-logo">
-                                    aca va el logo
-                                  </div>
-                                  <div class="footer-links">
-                                    <ul class="footer-menu">
-                                      <li><a href="#">santiago.fernandez.utn@gmail.com</a></li><br><br>
-                                      <li><a href="#">Libertad 1162</a></li><br><br>
-                                      <li><a href="#">0336 4012 957</a></li><br><br>
-                                    </ul>
-                                  </div>
-                                  <div class="footer-social">
-                                    <ul class="social-icons">
-                                      <li>
-                                        <button type="button"
-                                          class="icon-button"
-                                          id="python-button" data-lang="python">
-                                          <ion-icon name="logo-facebook"></ion-icon></button>
-                                      </li>
-                                      <li>
-                                        <button type="button"
-                                          class="icon-button"
-                                          id="python-button" data-lang="python">
-                                          <ion-icon name="logo-instagram"></ion-icon></button>
-                                      </li>
-                                      <li>
-                                        <button type="button"
-                                          class="icon-button"
-                                          id="python-button" data-lang="python">
-                                          <ion-icon name="logo-whatsapp"></ion-icon></button>
-                                      </li>
-                                      <li><button type="button"
-                                        class="icon-button"
-                                        id="python-button" data-lang="python">
-                                        <ion-icon name="headset-outline"></ion-icon></button>
-                                    </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="footer-bottom">
-                                  <p>&copy; Pagina desarrollada por santi</p>
-                                </div>
-                              </div>
-                            </footer>
+    <!-- EMPIEZA FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            aca va el logo
+          </div>
+          <div class="footer-links">
+            <ul class="footer-menu">
+              <li><a href="#">santiago.fernandez.utn@gmail.com</a></li><br><br>
+              <li><a href="#">Libertad 1162</a></li><br><br>
+              <li><a href="#">0336 4012 957</a></li><br><br>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <ul class="social-icons">
+              <li>
+                <button type="button"
+                  class="icon-button"
+                  id="python-button" data-lang="python">
+                  <ion-icon name="logo-facebook"></ion-icon></button>
+              </li>
+              <li>
+                <button type="button"
+                  class="icon-button"
+                  id="python-button" data-lang="python">
+                  <ion-icon name="logo-instagram"></ion-icon></button>
+              </li>
+              <li>
+                <button type="button"
+                  class="icon-button"
+                  id="python-button" data-lang="python">
+                  <ion-icon name="logo-whatsapp"></ion-icon></button>
+              </li>
+              <li><button type="button"
+                  class="icon-button"
+                  id="python-button" data-lang="python">
+                  <ion-icon name="headset-outline"></ion-icon></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; Pagina desarrollada por santi</p>
+        </div>
+      </div>
+    </footer>
 
-                            
-
-                            <script type="module"
-                              src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-                            <script nomodule
-                              src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-                            <script src="scripts.js"></script>
-                          </body>
-                        </html>
+    <script type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>

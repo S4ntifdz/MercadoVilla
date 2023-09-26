@@ -4,20 +4,25 @@
 {% comment %} aca empieza la seccion del usuario {% endcomment %}
 {%block content%}
 
-<div class = "jumbotron">
+<div class="jumbotron">
   <div class="parent">
-    <div class="div1"> <h1>HOLA {{ user.username }} </h1> </div>
+    <div class="div1"> <h1>Perfil de {{ user.username }} </h1></div>
     <br><br><br><br>
-    <div class="div1"><img src="{{ user.avatar }}" alt="imagen de perfil" width="200" height="200"></div>
-    <div class="div1"> <h3> Email:  {{ user.email }} </h1> </div><br>
-    <div class="div1"> <h3> Fecha de nacimiento:  {{ user.date_joined|date:"d-m-Y" }} </h1> </div><br>
-    <div class="div1"> <h3> Fecha de registro:  {{ user.date_joined|date:"d-m-Y" }} </h1> </div><br>
-    <div class="div1"> <h3> Ultimo acceso:  {{ user.last_login|date:"d-m-Y" }} </h1> </div>
-    
+    <div class="div1"><img src="{{ user.avatar.url }}" alt="imagen de perfil" width="200" height="200"></div>
+    <br>
+    <div class="div1"> <h3> Email: {{ user.email }} </h1> </div><br>
+      <div class="div1"> <h3> Nombre: {{ user.first_name }} </h1> </div><br>
+      <div class="div1"> <h3> Apellido: {{ user.second_name }}</div><br>
+    <div class="div1"> <h3> Ultimo acceso: {{ user.last_login|date:"d-m-Y" }}
+      </h1> </div><br>
+    <div class="div1"> <h3> Rubro de interes: {{ user.business_line_interes }}
+      </h1> </div>
+
     <br><br><br><br><br><br>
     <a href="{% url 'logout' %}">Cerrar sesión</a>
-    {% comment %} TODO no carga ni la imagen ni tampoco los datos del user en el template  {% endcomment %}
-    </div>
+    {% comment %} TODO no carga ni la imagen ni tampoco los datos del user en el
+    template {% endcomment %}
+  </div>
 </div>
 {% comment %} aca TERMINA la seccion del usuario {% endcomment %}
 {%endblock content%}
