@@ -29,6 +29,7 @@ urlpatterns = [
     path('web/', include('web.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
     path("user/", include("user.urls")),
+    path("publication/<int:code_product>", include("publication.urls")),
     path('logout/', LogoutView.as_view(), name='logout'),
 ]
 if settings.DEBUG: #aca pregunto si estoy en debug, ya que nunca me dejaria hacerlo en produccion

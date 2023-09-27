@@ -12,4 +12,4 @@ class UserView(View):
         return render(request, "user.html", {"user": user})
     
     def post(self, request):
-        pass
+        pass 

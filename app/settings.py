@@ -47,8 +47,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'django.contrib.humanize',
     'user',
-    'web',
-]
+    'web']
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
