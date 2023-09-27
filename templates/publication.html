@@ -9,14 +9,34 @@
                 <img class="product-img" src="{{ publication_product.imagen.url }}">
             </div>
 
-            <div>
-                <p class="product-name">
-                    <a href="#">{{ publication_product.name_product | capfirst }}</a>
-                </p>
-                <!-- Resto de los detalles del producto -->
-            </div>
+            
         </div>
     </div>
 </div>
+<form action="{% url 'cart'%}" method="POST">
+{% csrf_token %}
+<p>
+<div>
+    <h1>{{publication_product.name_product | capfirst}}</h1>
+    <br><br>
+    <p class="product-name">
+        <h2>${{publication_product.price | intcomma}}</h2>
+    </p><br>
+    <p class="product-name">
+        <h2>Vendido por: {{ publication_product.user | capfirst }}</h2>
+    </p>
+    <p class="product-name">
+        <h2>Descripcion de producto: {{ publication_product.description | capfirst }}</h2>
+    </p>
+    <input type="text" value="{{publication_product.pk}}" name="id" hidden>
+    
+    <input type="number" name="qt" >
 
+    <button type="submit"class="icon-button"id="python-button" ><ion-icon name="bag-add-sharp"></ion-icon></button>
+    <button type="button"class="icon-button"id="python-button" data-lang="python"><ion-icon name="help-circle-sharp"></ion-icon></button>
+    
+    
+</div>
+</p>
+</form>
 {% endblock content%}

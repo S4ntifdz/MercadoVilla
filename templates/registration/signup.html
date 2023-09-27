@@ -2,15 +2,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container py-5">
-  <h1>Registrar</h1>
-  <form method="post">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-5">Registrar</h1>
+    <form method="post">
     {% csrf_token %}
     
-    {{ form|crispy }}
+    {{ form | crispy }}
     
     <button class="btn btn-primary" type="submit">Registrar</button>
-  </form>
-  <p class="text-center">Ya tenes una cuenta? <a href="/login/"> Ingresa aca</a>.</p>
+    </form>
+    <p class="text-center">Ya tenes una cuenta? <a href="/login/"> Ingresa aca</a>.</p>
+</div>  
+</div>
 </div>
 {% endblock content %}

@@ -31,6 +31,7 @@ urlpatterns = [
     path("user/", include("user.urls")),
     path("publication/<int:code_product>", include("publication.urls")),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path("cart/", include("cart.urls")),
 ]
 if settings.DEBUG: #aca pregunto si estoy en debug, ya que nunca me dejaria hacerlo en produccion
     from django.conf.urls.static import static

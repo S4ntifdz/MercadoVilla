@@ -289,3 +289,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOGOUT_REDIRECT_URL = '/web/'#tengo que meter esto pq sino me tira al admin
 
+IMAGES = {
+    "default_product" : "default_product.png",
+    "add_to_cart" : "add_to_cart.png",
+}
