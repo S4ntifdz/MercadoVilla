@@ -8,7 +8,7 @@ let slideIndex = 0;
 leftArrow.addEventListener('click', () => {
   slideIndex = Math.max(slideIndex - 1, 0);
   updateSlidePosition();
-  console.log("holaaaaaaaaaaaaa");
+ 
 });
 
 // Agregar evento click para la flecha derecha

@@ -17,7 +17,7 @@
             <div class="product-section">
                 <div class="product-border">
                 <div class="product-img-center">
-                <a href="#">
+                <a href="/publication/{{p.code_product}}">
                     <img class="product-img" src="{{ p.imagen.url }}">
                 </a>
             </div>
@@ -56,6 +56,7 @@
 {% endfor %}
 </div>
 </div>
+
 <br><br><br>
 <h3>Otras categorias </h3>
 {% endif %}
@@ -71,14 +72,14 @@
             <div class="product-section">
                 <div class="product-border">
                 <div class="product-img-center">
-                <a href="#">
+                <a href="/publication/{{p.code_product}}">
                     <img class="product-img" src="{{ p.imagen.url }}">
                 </a>
             </div>
 
             <div>
                 <p class="product-name">
-                <a href="#">{{p.name_product | capfirst}}</a>
+                <a href="/publication/{{p.code_product}}">{{p.name_product | capfirst}}</a>
                 </p>
                 <p class="product-rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
