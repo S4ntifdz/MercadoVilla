@@ -1,9 +1,28 @@
 {% extends "home.html" %}
 
-
 {% block content %}
-{% load humanize %}
-{% csrf_token %}
-<h1> CARRO DE COMPRAS </h1>
+<div class="cart">
+    <h1>Tu carrito de compras</h1>
 
-{%endblock content %}
+    {% if cart_items %}
+        <ul>
+            {% for item in cart_items %}
+                <li>
+                    <span>{{ item.product.name_product }}</span>
+                    <span>Cantidad: {{ item.quantity }}</span>
+                    <span>Precio unitario: ${{ item.product.price }}</span>
+                    <span>Total: ${{ item.total_price }}</span>
+                    <a href="{% url 'remove_from_cart' item.product.pk %}">Eliminar</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Total del carrito: ${{ cart.total_cart_price }}</p>
+        <form action="{% url 'checkout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Realizar pedido</button>
+        </form>
+    {% else %}
+        <p>Tu carrito está vacío.</p>
+    {% endif %}
+</div>
+{% endblock %}

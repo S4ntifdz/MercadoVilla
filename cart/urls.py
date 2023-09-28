@@ -1,12 +1,7 @@
-
 from django.urls import path
-from web.views.index_view import IndexView
-#from web.views.publication_view import PublicationView
-from cart.views import CartView
-
-
-
+from .views import CartView
 
 urlpatterns = [
-    path('', CartView.as_view(), name="cart"),
+    path('', CartView.as_view(), name='cart'),
+    # Agrega otras URLs relacionadas con el carrito, como agregar y eliminar elementos
 ]

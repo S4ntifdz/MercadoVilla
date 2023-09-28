@@ -1,6 +1,10 @@
 from django.contrib import admin
-from .models import CartModel
+from .models import Cart, CartItem
 
-@admin.register(CartModel)
+@admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('user', 'created_at')
+
+@admin.register(CartItem)
+class CartItemAdmin(admin.ModelAdmin):
+    list_display = ('cart', 'product', 'quantity', 'total_price')
