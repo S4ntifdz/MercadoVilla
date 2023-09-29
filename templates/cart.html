@@ -3,9 +3,20 @@
 {% block content %}
 <div class="cart">
     <h1>Tu carrito de compras</h1>
-    <p>Cantidad: {{ cart_item.quantity }}</p>
-    <p>Total del carrito: ${{ cart_item.total_price }}</p>
-
-
+    {% for item in cart.cartitem_set.all %}
+    <p>Producto: {{ item.product }}</p>
+    <img class="product-img" src="{{ item.product.imagen.url }}">
+    <p>Cantidad: {{ item.quantity }}</p>
+    <p>Total del producto: ${{ item.total_price }}</p>
+    {% endfor %}
+    <form action="{% url 'cart' %}" method="POST">
+        {% csrf_token %}
+        <!-- Resto del formulario para agregar elementos al carrito -->
+        <button type="submit" name="clear_cart"><ion-icon name="trash-outline"></ion-icon></button>
+        
+    </form>
+    
+    
+    <p>Total del carrito: $ {{ cart.total_price }}</p>
 </div>
 {% endblock %}

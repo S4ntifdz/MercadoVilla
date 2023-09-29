@@ -35,7 +35,13 @@
     <button type="submit"class="icon-button"id="python-button" ><ion-icon name="bag-add-sharp"></ion-icon></button>
     <button type="button"class="icon-button"id="python-button" data-lang="python"><ion-icon name="help-circle-sharp"></ion-icon></button>
     
-    
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>    
+{% endif %}
 </div>
 </p>
 </form>
