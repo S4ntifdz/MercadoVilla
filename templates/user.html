@@ -3,12 +3,13 @@
 
 {% comment %} aca empieza la seccion del usuario {% endcomment %}
 {%block content%}
-
-<div class="jumbotron">
-  <div class="parent">
-    <div class="div1"> <h1>Perfil de {{ user.username }} </h1></div>
+<div class="title"> <h1>Perfil de {{ user.username }} </h1></div>
+<div class="profile-card">
+  <div class="profile-description">
+    
     <br><br><br><br>
-    <div class="div1"><img src="{{ user.avatar.url }}" alt="imagen de perfil" width="200" height="200"></div>
+    <div class="profile-picture"><img src="{{ user.avatar.url }}" 
+      alt="imagen de perfil"  class="profile-image"></div>
     <br>
     <div class="div1"> <h3> Email: {{ user.email }} </h1> </div><br>
       <div class="div1"> <h3> Nombre: {{ user.first_name }} </h1> </div><br>
@@ -19,10 +20,13 @@
       </h1> </div>
 
     <br><br><br><br><br><br>
-    <a href="{% url 'logout' %}">Cerrar sesión</a>
+ 
     {% comment %} TODO no carga ni la imagen ni tampoco los datos del user en el
     template {% endcomment %}
   </div>
 </div>
 {% comment %} aca TERMINA la seccion del usuario {% endcomment %}
+<a href="{% url 'logout' %}"><button type="button"class="icon-button"id="python-button" data-lang="python">
+  <ion-icon name="log-out-outline"></ion-icon>SALIR</button></a>
+
 {%endblock content%}

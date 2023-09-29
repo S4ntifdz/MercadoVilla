@@ -1,0 +1,65 @@
+
+.profile-card {
+    height: 350px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+/* Estilo base para pantallas más grandes */
+@media screen and (min-width: 768px) {
+    .profile-card {
+        width: 300px; /* Aumenta el ancho en pantallas más grandes */
+        height: 400px; /* Ajusta la altura en pantallas más grandes */
+    }
+}
+
+/* Estilo para pantallas más pequeñas, como dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .profile-card {
+        width: 90%; /* Utiliza un ancho relativo en pantallas pequeñas */
+        height: auto; /* Deja que la altura se ajuste automáticamente */
+        margin-left: 0; /* Elimina el margen izquierdo para centrarlo en pantalla */
+        transform: none; /* Elimina la transformación para centrarlo en pantalla */
+        border-radius: 0; /* Elimina el radio de borde para un estilo más limpio */
+    }
+}
+
+.profile-content {
+    padding-inline: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-image {
+  width: 180px;
+  height: 180px;
+  background-color: #aaa;
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+.profile-picture img{
+    max-width: 100%;
+    justify-content: center;
+}
+.profile-name {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.profile-description {
+  margin-top: 5px;
+  color: #777;
+}
+.attribute{
+    position: absolute;
+    bottom: 10px;
+}
