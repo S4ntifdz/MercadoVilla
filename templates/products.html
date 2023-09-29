@@ -14,6 +14,7 @@
 <h2> Productos de categoria {{user.business_line_interes}} que podrían interesarte: </h2>
 {% for p in products%}
         <div class="width-25">
+            <div class = "product-card">
             <div class="product-section">
                 <div class="product-border">
                 <div class="product-img-center">
@@ -48,7 +49,7 @@
                 <p class ="product-seller">
                     <span class="product-seller-name">code: {{p.code_product}}</span>
                 </p>
-                </div>
+                </div></div>
                 </div>
             </div>
         </div>
@@ -69,6 +70,7 @@
     <br><br><br>
 {% for p in varios%}
         <div class="width-25">
+            <div class = "product-card">
             <div class="product-section">
                 <div class="product-border">
                 <div class="product-img-center">
@@ -102,6 +104,7 @@
                 </p>
                 </div>
                 </div>
+            </div>
             </div>
         </div>
 {% endfor %}
