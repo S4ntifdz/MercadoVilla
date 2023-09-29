@@ -23,7 +23,6 @@ from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #aca hago el enlace entre la url y que esa url apunte al directiorio fisico
     path("signup/", include("signup.urls")),
     path('login/', include('login.urls')),
     path('web/', include('web.urls')),

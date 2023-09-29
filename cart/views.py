@@ -18,28 +18,32 @@ class CartView(View):
         return HttpResponse(template.render(context, request))
     
     def post(self, request):
-        if not request.user.is_authenticated:
+        if not request.user.is_authenticated: 
             messages.error(request, 'Debes iniciar sesión para agregar elementos al carrito.')
             return redirect('login')  
 
 
-        product_id = request.POST.get('id')
-        quantity = int(request.POST.get('qt', 1))  
-
-        try:
-            product = StockProduct.objects.get(pk=product_id)
-        except StockProduct.DoesNotExist:
-            messages.error(request, 'El producto seleccionado no existe.')
-            return redirect('home')  # Redirige a la página de inicio o a donde desees
-
+        product_id = int(request.POST.get('id'))
+        quantity = int(request.POST.get('qt', 3))  
+        product = StockProduct.objects.get(pk=product_id) 
         
-        cart, _ = Cart.objects.get_or_create(user=request.user)
+        cart, _ = Cart.objects.get_or_create(user=request.user) 
+        # _ sirve para ignorar el segundo valor que retorna get_or_create, 
+        # que es un booleano que indica si se creó o no el objeto
 
         cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
         if not created:
             cart_item.quantity += quantity
             cart_item.save()
-
-        messages.success(request, f'Se ha agregado "{product.name_product}" al carrito.')
-
-        return redirect('cart')  # Redirige al carrito después de agregar el producto
+        else:
+            cart_item.quantity = quantity
+            cart_item.save()
+        
+        context ={
+            'cart': cart,
+            'cart_item': cart_item,
+            'product': product,
+            'quantity': quantity,
+        }
+        template = loader.get_template("cart.html")
+        return HttpResponse(template.render(context, request))
