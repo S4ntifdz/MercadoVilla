@@ -1,0 +1,89 @@
+
+/* login sacado de otro html */
+
+.form-boxsu {
+    position: relative;
+    top: -200px; /* Ajusta la altura deseada */
+    width: 500px;
+    height: 550px;
+    background: #fffffff7;
+    border: 5px solid rgba(16, 15, 15, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  
+  /* inputs usuario contraseña */
+  .inputboxsu {  
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 4px solid #141313;
+  }
+  
+  .inputboxsu label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);  /* animacion al cargar la pagina */
+    color: #ffffff;
+    font-size: 1.21em;    /* animacion al clickear en el input*/
+    pointer-events: none;
+    transition: .8s;
+  }
+  /* animacion de subir el campo del input 5px hacia arriba */
+  input:focus~label,input:valid~label {
+    top: -5px;
+    transition: .5s;
+  }
+  
+  .inputboxsu input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+  }
+  /* iconos dentro del input */
+  .inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #ffffff;
+    font-size: 1.5em;
+    top: 20px;
+  }
+  .containersu {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+.section-su {    /* CONTENIDO del recuadro central de ingresar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: cornflowerblue;
+  }
+  .button {
+    background-color:  #ffffff;
+    border: none;
+    color: rgb(83, 81, 81);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: #000000 1px solid;
+  }

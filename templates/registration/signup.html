@@ -2,67 +2,64 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 {% load crispy_forms_tags %}
 {% block content %}
-<section>
+<section class="section-su">
 
         <div class="form-value">
           <form method="post">
           {% csrf_token %}
                 <h2>Bienvenido</h2>
-                <div class="inputbox">user:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">user:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.username }}
                 </div>
-                <div class="inputbox">email:<ion-icon name="mail-outline">User</ion-icon>
+                <div class="inputboxsu">email:<ion-icon name="mail-outline">User</ion-icon>
                 {{ form.email }}
                 </div>
-                <div class="inputbox">Password:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">Password:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.password }}
                 </div>
-                <div class="inputbox">Repetir password:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">Repetir password:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.password2 }}
                 </div>
-                <div class="inputbox">nombre:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">nombre:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.first_name }}
                 </div>
-                <div class="inputbox">apellido:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">apellido:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.last_name }}
                 </div>
-                <div class="inputbox">cuit:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">cuit:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.cuit }}
                 </div>
                 <div class="inputbox">interes:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.business_line_interes }}
                 </div>
-                <div class="inputbox">rubro de venta:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">rubro de venta:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.business_line }}
                 </div>
-                <div class="inputbox">cuit:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">cuit:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.cuit }}
                 </div>
-                <div class="inputbox">vendes? :<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">vendes? :<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.is_seller }}
                 </div>
-                <div class="inputbox">state:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">state:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.state }}
                 </div>
-                <div class="inputbox">city:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">city:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.city }}
                 </div>
-                <div class="inputbox">pc:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">pc:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.postal_code }}
                 </div>
-                <div class="inputbox">state:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">state:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.state }}
                 </div>
-                <div class="inputbox">telefono:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">telefono:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.phone_number }}
                 </div>
-                <div class="inputbox">avatar:<ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputboxsu">avatar:<ion-icon name="lock-closed-outline"></ion-icon>
                   {{ form.avatar }}
                 </div>
-                <!-- <div class="forget">
-                    <label for><input type="checkbox" >Recordarme
-                    </label>
-                </div> -->
+
                 <br>
                 <button class="button" type="submit"> Ingresar</button>
                 <div class="register">
