@@ -3,10 +3,10 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
+{% comment %} 
 
 
-
-
+<section>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-5">LOGIN</h1>
@@ -23,11 +23,49 @@
       
       {{ login_form|crispy }}
       
+      
       <button class="btn btn-primary" type="submit"> Ingresar</button>
     </form>
     <p class="text-center">No tenes cuenta? <a href="/signup/"> Create una aca!</a></p>
   </div>
 </div>
+</section> {% endcomment %}
+<section>
+<div class ="form-container ">
+  <div class="form-box">
+      <div class="form-value">
+        <form method="post">
+        {% csrf_token %}
+              <h2>Bienvenido</h2>
+              <div class="inputbox">Username:<ion-icon name="mail-outline">User</ion-icon>
+              {{ login_form.username }}
+              
+              </div>
+              <div class="inputbox">Password:<ion-icon name="lock-closed-outline"></ion-icon>
+                {{ login_form.password }}
+              </div>
+              <!-- <div class="forget">
+                  <label for><input type="checkbox" >Recordarme
+                  </label>
+              </div> -->
+              <br>
+              <button class="button" type="submit"> Ingresar</button>
+              <div class="register">
+                <br>
+                <p class="text-center">No tenes cuenta? <a href="/signup/"> Create una aca!</a></p>
+              </div>
+              <div class="register" >
+                  <a style="color: rgb(255, 255, 255); text-decoration:none" href="#" >Olvide
+                      mi contraseña</a>
+
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+</section>
+
 {% endblock content %}
 
 
