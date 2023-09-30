@@ -12,6 +12,7 @@
 {% csrf_token %}
 {% if user.is_authenticated  %}
 <h2> Productos de categoria {{user.business_line_interes}} que podrían interesarte: </h2>
+
 {% for p in products%}
         <div class="width-25">
             <div class = "product-card">

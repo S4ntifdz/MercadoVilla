@@ -1,0 +1,31 @@
+.publication-card {
+    height: 650px;
+    width: 450px;
+    display:table;
+    background-color: #f0f0f0;
+    border: 5px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 50%;
+    justify-content: center;
+    transform: translate(-50%, -5%);
+}
+.publication-caract{
+    display:table-cell;
+    vertical-align:middle;
+    padding: 66px;
+    text-align:center;
+   
+    box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+.publication-descr{
+   
+
+    background-color: rgb(251, 251, 251);
+    padding: 66px;
+    padding-left: 150px;
+    text-align:center;
+
+   
+}

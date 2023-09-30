@@ -1,8 +1,9 @@
 {% extends "home.html" %}
 {% load humanize%}
 {% block content %}
+<div class = "publication-card">
 
-<div class="width-25">
+
     <div class="product-section">
         <div class="product-border">
             <div class="product-img-center">
@@ -12,26 +13,29 @@
             
         </div>
     </div>
-</div>
 <form action="{% url 'cart'%}" method="POST">
 {% csrf_token %}
-<p>
-<div>
+
+<div class = "publication-caract">
     <h1>{{publication_product.name_product | capfirst}}</h1>
     <br><br>
     <p class="product-name">
         <h2>${{publication_product.price | intcomma}}</h2>
     </p><br>
     <p class="product-name">
-        <h2>Vendido por: {{ publication_product.user | capfirst }}</h2>
+        <h2>Vendido por: <a href="#">{{ publication_product.user | capfirst }}</a></h2>
+    </p><br>
+    <h3>Descripcion de producto:</h3>
+    <div class = "publication-descr">
+    <p >
+        <br>
+        <h3>{{publication_product.description}}</h3>
     </p>
-    <p class="product-name">
-        <h2>Descripcion de producto: {{ publication_product.description | capfirst }}</h2>
-    </p>
+</div>
     <input type="text" value="{{publication_product.pk}}" name="id" hidden>
     
     <input type="number" name="qt" >
-
+    <br><br><br>
     <button type="submit"class="icon-button"id="python-button" ><ion-icon name="bag-add-sharp"></ion-icon></button>
     <button type="button"class="icon-button"id="python-button" data-lang="python"><ion-icon name="help-circle-sharp"></ion-icon></button>
     
@@ -42,7 +46,7 @@
         {% endfor %}
     </ul>    
 {% endif %}
-</div>
+</div></div>
 </p>
 </form>
 {% endblock content%}
