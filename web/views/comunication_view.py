@@ -7,6 +7,8 @@ from stock.models import StockProduct
 from clients.models import ClientModel
 from django.shortcuts import redirect
 from django.urls import reverse
+from comunication.models import ComunicationModel
+from clients.models import ClientModel
 
 class ComunicationView(LoginRequiredMixin, View):
     def __init__(self, **kwargs) -> None:
@@ -22,3 +24,10 @@ class ComunicationView(LoginRequiredMixin, View):
             "initial_text" : f"Hola {stock.user.username}, me gustaria consultarle sobre el producto '{stock.name_product}' que vi en su tienda online. ",
         }
         return HttpResponse(self.template.render(context, request)) 
+    def post(self,request):
+        ComunicationModel.objects.create(
+            client_question = ClientModel.objects.get(pk=int(request.POST.get("client"))),
+            client_seller = ClientModel.objects.get(pk=int(request.POST.get("client_seller"))),
+            question = request.POST.get("question"),
+        )
+        return redirect(reverse("product"))

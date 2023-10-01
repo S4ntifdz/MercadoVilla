@@ -1,0 +1,10 @@
+{% extends "home.html" %}
+
+
+{% block content %}
+{% load humanize %}
+{% load static %}
+{% for c in chat%}
+{{c.question}} ---> {{c.answer}} <br>
+{% endfor %}
+{%endblock content%}
