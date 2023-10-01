@@ -1,5 +1,6 @@
 from django.urls import path
 from web.views.index_view import IndexView
+from web.views.comunication_view import ComunicationView
 #from web.views.publication_view import PublicationView
 
 
@@ -8,5 +9,5 @@ from web.views.index_view import IndexView
 
 urlpatterns = [
     path('', IndexView.as_view(), name="product"),
-#    path('publication/<int:code_product>/', PublicationView.as_view(), name='publication')
+    path('comunication/', ComunicationView.as_view(), name="comunication"),
 ]

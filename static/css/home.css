@@ -85,6 +85,7 @@ html {
 .width-25 {
   width: 25%;
   float: left;
+  padding: 20px;
 }
 
 .width-75 {
@@ -437,7 +438,11 @@ html {
 
 /**********  Main Menu termina  **********/
 
-
+.logo-img{
+  width: 200px;
+  height: 100px;
+  border: #2b304a 1px solid;
+}
 
 
 
@@ -446,12 +451,13 @@ html {
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .product-img {
-  width: auto;
-
+  width: 100px;
   height: 100px;
+  border: #2b304a 1px solid;
 }
 
 .product-img-center {
@@ -471,7 +477,7 @@ html {
   justify-content: center;
   background-color: #f0f0f0;
   border-radius: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 }
 
 .product-name a {
@@ -793,7 +799,9 @@ ion-icon {
 
 
 /* login sacado de otro html */
-
+.form-container {
+  padding-bottom: -50px;
+}
 .form-box {
   position: relative;
   top: -200px; /* Ajusta la altura deseada */
@@ -816,6 +824,7 @@ ion-icon {
   margin: 30px 0;
   width: 310px;
   border-bottom: 4px solid #141313;
+  box-shadow: 0 0 20px #545454;
 }
 
 .inputbox label {
@@ -837,12 +846,15 @@ input:focus~label,input:valid~label {
 .inputbox input {
   width: 100%;
   height: 50px;
-  background: transparent;
+  text-decoration-color: #000000;
+  background:#6f6f6f;
   border: none;
   outline: none;
   font-size: 1em;
   padding: 0 35px 0 5px;
   color: #fff;
+  border: #000000 1px solid;
+  
 }
 /* iconos dentro del input */
 .inputbox ion-icon {
@@ -864,6 +876,7 @@ section {    /* CONTENIDO del recuadro central de ingresar */
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  height: 20px;
   box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1);
 }
 .button {
