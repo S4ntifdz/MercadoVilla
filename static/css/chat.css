@@ -1,0 +1,47 @@
+.global {
+	height: 600px;
+	width: 500px;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+	overflow-y: scroll;
+}
+.mensajes {
+	height: auto;
+}
+.texto {
+	padding:4px;
+	background:#fff;
+}
+
+.chat-card {
+    height: 550px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+/* Estilo base para pantallas más grandes */
+@media screen and (min-width: 768px) {
+    .chat-card {
+        width: 650px; /* Aumenta el ancho en pantallas más grandes */
+        height: 550px; /* Ajusta la altura en pantallas más grandes */
+    }
+}
+
+/* Estilo para pantallas más pequeñas, como dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .chat-card {
+        width: 90%; /* Utiliza un ancho relativo en pantallas pequeñas */
+        height: auto; /* Deja que la altura se ajuste automáticamente */
+        margin-left: 0; /* Elimina el margen izquierdo para centrarlo en pantalla */
+        transform: none; /* Elimina la transformación para centrarlo en pantalla */
+        border-radius: 0; /* Elimina el radio de borde para un estilo más limpio */
+    }
+}
