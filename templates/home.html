@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/signup.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/publication.css' %}" type="text/css" />
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
     {% load humanize %}
   </head>
   <body>
@@ -102,7 +103,7 @@
           </li>
 
           <li>
-            <a href="{%url 'comunication' %}">Mensajes</a>
+            <a href="{%url 'chat' %}">Mensajes</a>
           </li>
 
           <li>
@@ -125,6 +126,8 @@
     <!---------- TERMINA EL BANNER --------->
 
     <!--------- EMPIEZA SECCION DE PRODUCTOS -------------> {% endcomment %}
+    
+
     {% block content %}
 
     {% endblock content %}
