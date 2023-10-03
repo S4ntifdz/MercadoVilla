@@ -15,7 +15,7 @@ class CartView(View):
     def clear_cart(self, request):
         cart, _ = Cart.objects.get_or_create(user=request.user)
         cart.cartitem_set.all().delete()
-        cart.update_cart_total()  # Actualizar el total después de borrar elementos
+        cart.update_cart_total() 
         return redirect('cart')
 
     def post(self, request):
@@ -24,6 +24,7 @@ class CartView(View):
 
         product_id = int(request.POST.get('id'))
         quantity = int(request.POST.get('qt', 1))
+        
         product = StockProduct.objects.get(pk=product_id)
         
         if product.quantity_stock >= quantity:

@@ -12,9 +12,24 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+:root{
+/* --color1: #f13f31;
+--color2:#2b304a;
+--color3:#4d4949;
+--color4: #333; */
+/*turquesas*/
+/* --color5 : #343838 ;
+--color4 : #005f6b ;
+--color3 : #008c9e ;
+--color2 : #027fe9 ;
+--color1 : #5015bd ; */
 
-
-
+--color1 : #d94052 ;
+--color2 : #ee7e4c ;
+--color3 : #341931 ;
+--color4 : #7a1e48 ;
+--color5 : #7a1e48 ;
+}
 
 /* banner publicitario */
 .slider {
@@ -22,11 +37,8 @@ body {
   display: flex;
   background-color: #dadada;
   justify-content: center;
-  /* Centrar horizontalmente */
   align-items: center;
-  /* Centrar verticalmente */
   border: 1px solid #ffffff;
-  /* Solo para visualizar el contenedor */
   margin-bottom: 100px;
 
 }
@@ -75,7 +87,7 @@ html {
 .width-100 {
   width: 100%;
   float: left;
-  background-color: #4d4949;
+  background-color: var(--color3);
   box-shadow: #000000 10px 0px 10px;
 }
 
@@ -320,7 +332,7 @@ html {
 /* ***************palabra superior deslizante termina ****************/
 /********** Header empieza  **********/
 .top-header {
-  background: #f13f31;
+  background: var(--color1);
   padding: 8px 0px;
   border-bottom: 1px solid #3131315e;
 }
@@ -366,7 +378,7 @@ html {
 
 /**********  Logo / Search Panel empieza  **********/
 .search-panel {
-  background: #f13f31;
+  background: var(--color1);
   padding: 15px 0px;
 }
 
@@ -389,7 +401,7 @@ html {
 }
 
 .search-button i {
-  color: #f13f31;
+  color:var(--color1);
 }
 
 .cart-sect {
@@ -430,7 +442,7 @@ html {
 
 .main-menu a {
   font-weight: 500;
-  color: #2b304a;
+  color: var(--color2);
   font-size: 17px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif,
     sans-serif,
@@ -655,7 +667,7 @@ html {
 .footer {
   font-size: 18px;
   width: 100%;
-  background-color: #333;
+  background-color:var(--color4);
   color: #fff;
   padding: 30px 0;
   border-radius: 0px 10px 10px 0px;

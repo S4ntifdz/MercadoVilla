@@ -287,8 +287,10 @@ from django.core.files.storage import FileSystemStorage
 
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 LOGOUT_REDIRECT_URL = '/web/'#tengo que meter esto pq sino me tira al admin
 
 IMAGES = {
