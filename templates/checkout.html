@@ -1,0 +1,14 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div>
+<a href="?" class="btn btn-primary">Pagar</a>
+</div>
+
+{% endblock %}
+{% comment %} 
+el a siempre va por GET, siempre usa el mismo contexto y tambien
+siempre usa el mismo template, es por eso que no me conviene crear un nuevo controlador, es 
+mejor reutilizar el cart view, poniendole que en el caso que me interese ir a checkout solo me cambie el template
+{% endcomment %}

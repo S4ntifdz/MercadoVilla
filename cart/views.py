@@ -1,16 +1,23 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views import View
+from django.template import loader
 from .models import Cart, CartItem
 from stock.models import StockProduct
 
 class CartView(View):
+    def __init__(self, **kwargs) -> None:
+        self.template = loader.get_template("cart.html")
+        super().__init__(**kwargs)
+        
     def get(self, request):
+        if request.GET.get("route")== "checkout":
+            self.template = loader.get_template("checkout.html")
         cart, _ = Cart.objects.get_or_create(user=request.user)
         context = {
             'cart': cart,
         }
-        return render(request, "cart.html", context)
+        return render(request, self.template.template.name, context)
 
     def clear_cart(self, request):
         cart, _ = Cart.objects.get_or_create(user=request.user)
