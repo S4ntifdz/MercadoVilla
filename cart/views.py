@@ -4,6 +4,7 @@ from django.views import View
 from django.template import loader
 from .models import Cart, CartItem
 from stock.models import StockProduct
+from web.forms.checkout_form import CheckoutForm
 
 class CartView(View):
     def __init__(self, **kwargs) -> None:
@@ -11,12 +12,15 @@ class CartView(View):
         super().__init__(**kwargs)
         
     def get(self, request):
-        if request.GET.get("route")== "checkout":
-            self.template = loader.get_template("checkout.html")
         cart, _ = Cart.objects.get_or_create(user=request.user)
         context = {
             'cart': cart,
         }
+        
+        if request.GET.get("route")== "checkout":
+            self.template = loader.get_template("checkout.html")
+            context["form"] =  CheckoutForm #punto de teoria, como pasar un formulario como contexto
+
         return render(request, self.template.template.name, context)
 
     def clear_cart(self, request):
