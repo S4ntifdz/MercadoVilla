@@ -7,12 +7,13 @@ from stock.models import StockProduct
 from web.forms.checkout_form import CheckoutForm
 
 class CartView(View):
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, **kwargs) -> None: 
         self.template = loader.get_template("cart.html")
         super().__init__(**kwargs)
         
     def get(self, request):
-        cart, _ = Cart.objects.get_or_create(user=request.user)
+        cart, _ = Cart.objects.get_or_create(user=request.user) 
+        
         context = {
             'cart': cart,
         }
@@ -25,6 +26,8 @@ class CartView(View):
 
     def clear_cart(self, request):
         cart, _ = Cart.objects.get_or_create(user=request.user)
+# el _ se usa para decirle que no me importa el segundo valor que devuelve, solo quiero el primero
+
         cart.cartitem_set.all().delete()
         cart.update_cart_total() 
         return redirect('cart')

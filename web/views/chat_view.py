@@ -10,11 +10,12 @@ from django.urls import reverse
 from comunication.models import ComunicationModel
 from clients.models import ClientModel
 
+
 class ChatView(LoginRequiredMixin, View):
     def __init__(self, **kwargs) -> None:
         self.template = loader.get_template("chat.html")
         super().__init__(**kwargs)
-    
+
     def get(self,request):
         # stock = StockProduct.objects.get(pk=request.GET.get("item"))
         # chat = ComunicationModel.objects.filter(client_question=ClientModel.objects.get(pk=request.user.pk),client_seller=ClientModel.objects.get(pk=stock.user.pk))
