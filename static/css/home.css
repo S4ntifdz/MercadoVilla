@@ -335,6 +335,7 @@ html {
   background: var(--color1);
   padding: 8px 0px;
   border-bottom: 1px solid #3131315e;
+
 }
 
 .head1p1 {
@@ -924,4 +925,183 @@ section {    /* CONTENIDO del recuadro central de ingresar */
   padding: 15px 20px;
   background-color: transparent;
   border-bottom: 5px solid rgba(7, 7, 7, 0.07);
+}
+
+
+#header {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e3e6f3;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-list-nav ul {
+  display: flex;
+}
+.header-list-nav ul li {
+  list-style-type: none;
+  padding: 0 20px;
+  position: relative;
+}
+.header-list-nav ul a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+.header-list-nav ul a:hover,
+.header-list-nav ul a.active {
+  color: #088178;
+  content: "";
+}
+.header-list-icon a {
+  color: #1a1a1a;
+  padding-left: 20px;
+  transition: 0.3s ease;
+}
+.header-list-icon a:hover,
+.header-list-nav ul a.active {
+  color: #088178;
+}
+.header-list-nav ul li a:hover::after,
+.header-list-nav ul li a.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+
+
+
+
+
+
+
+.nav {
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4d4d4d;
+  position: relative;
+  border: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.nav  .nav-header {
+  width: 50%;
+  display: inline;
+}
+
+.nav  .nav-header  .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px;
+}
+
+.nav  .nav-btn {
+  display: none;
+}
+
+.nav  .nav-links {
+  width: 50%;
+  display: inline-flex;
+  justify-content: flex-end;
+  column-gap: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.nav  .nav-links  a {
+  display: inline-block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav  .nav-links  a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav  #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav  .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav  .nav-btn  label {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    border: none;
+    border-top-right-radius: 10px;
+  }
+  .nav  .nav-btn  label:hover,.nav  #nav-check:checked ~ .nav-btn  label {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  .nav  .nav-btn  label  span {
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+  }
+  .nav  .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav  .nav-links  a {
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+  }
+  .nav  #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav  #nav-check:checked ~ .nav-links {
+    height: 250px;
+    overflow-y: hidden;
+  }
+}
+
+.attribute{
+  position: absolute;
+  bottom: 10px;
 }
