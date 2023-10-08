@@ -1,7 +1,7 @@
 <html>
   <head>
     {% load static %}
-    <title>Website Site</title>
+    <title>MERCADO VILLA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/user.css' %}" type="text/css" />
@@ -54,7 +54,7 @@
     <div class="width-100 search-panel">
       <div class="container">
         <div class="width-20">
-          <img src="{% static 'img/logo_vale2.jpg' %}" class="logo-img"
+          <img src="{% static 'img/LOGOPNG.png' %}" class="logo-img"
             alt="[Logotipo]">
         </div>
         <div class="width-50">
@@ -69,7 +69,7 @@
 
           <!-- seccion del carro -->
 
-          <ul class="cart-sect">
+          {% comment %} <ul class="cart-sect">
             {% if user.is_authenticated %}
             <li>
               <a href="/user/">Perfil de {{ user.username |capfirst }}</a>
@@ -88,7 +88,7 @@
               <a href="/login/"> Iniciar sesion </a>
             </li>
             {% endif %}
-          </ul>
+          </ul> {% endcomment %}
         </div>
       </div>
     </div>
@@ -130,8 +130,12 @@
       <input type="checkbox" id="nav-check">
       <div class="nav-header">
         <div class="nav-title">
-            <a href="{% url 'logout' %}"><button type="button"class="icon-button"id="python-button" data-lang="python">
-              <ion-icon name="home"><a href="/web/"></a></ion-icon></button></a>
+            <a href="/web/"><button type="button"class="icon-button"id="python-button" data-lang="python">
+              <ion-icon name="home"></ion-icon></button></a>
+{% comment %} .............................. {% endcomment %}
+
+
+{% comment %} ............................. {% endcomment %}
         </div>
       </div>
       <div class="nav-btn">
@@ -156,14 +160,14 @@
           {% endif %}
       </div>
   </div>
-    <!---------- TERMINA NAVBAR --------->
-    
+
+
 
     {% block content %}
 
     {% endblock content %}
 
-    <!---------- TERMINA SECCION DE PRODUCTOS --------->
+
 
     <!-- EMPIEZA SECCION DE VENTAJAS -->
     <div class="width-100 margin-top-50 feature-sect">
