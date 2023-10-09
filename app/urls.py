@@ -19,6 +19,7 @@ from django.urls import path, include
 #.................................
 from django.conf import settings
 from django.contrib.auth.views import LogoutView
+from . import views
 
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
     path("publication/<int:code_product>", include("publication.urls")),
     path('logout/', LogoutView.as_view(), name='logout'),
     path("cart/", include("cart.urls")),
+    path("", views.IndexView.as_view())
 ]
 if settings.DEBUG: #aca pregunto si estoy en debug, ya que nunca me dejaria hacerlo en produccion
     from django.conf.urls.static import static

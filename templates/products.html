@@ -11,7 +11,8 @@
 <div class="slide">
 {% csrf_token %}
 {% if user.is_authenticated  %}
-<h1 class = "title-general"> Productos de categoria {{user.business_line_interes}} que podrían interesarte: </h2>
+<h1 class = "title-general"> Productos de categoria
+     {{user.business_line_interes}} que podrían interesarte: </h2>
 
 {% for p in products%}
         <div class="width-25">

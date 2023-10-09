@@ -9,11 +9,21 @@
 <div class="global">
 {% for c in chat%}
 <div class="chat-container">
-<div>
-{{c.question}} | RESPUESTA ➨ {{c.answer}} 
+
+<div class ="cart-item">
+<strong>{{c.user}}</strong>
+{{c.question}}  
+<br>
+>>>
+{% if c.answer%} 
+{{c.answer}} 
+{% else %}
+<strong>No hay respuesta todavia</strong>
+{% endif %}
 <br>
 </div>
 </div>
+
 {% endfor %}
 </div>
 </div>

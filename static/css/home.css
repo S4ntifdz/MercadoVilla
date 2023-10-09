@@ -38,8 +38,8 @@ background-size: cover;
 --color1 : #d94052 ;
 --color2 : #ee7e4c ;
 --color3 : #341931 ;
---color4 : #7a1e48 ;
---color5 : #7a1e48 ;
+--color4 : #0a0a0a ;
+--color5 : #4c4949 ;
 }
 
 /* banner publicitario */
@@ -1019,10 +1019,10 @@ section {    /* CONTENIDO del recuadro central de ingresar */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4d4d4d;
+  background-color: #474747;
   position: relative;
   border: none;
-  border-radius: 10px 10px 0 0;
+  
 }
 
 .nav  .nav-header {
@@ -1144,3 +1144,9 @@ section {    /* CONTENIDO del recuadro central de ingresar */
   /* border-radius: 0% 0% 25% 25%; */
 
 }
+
+
+
+
+
+
