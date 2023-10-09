@@ -1,5 +1,5 @@
 .publication-card {
-    height: 650px;
+    height: 550px;
     width: 450px;
     display:table;
     background-color: #f0f0f0;
@@ -7,27 +7,23 @@
     border-radius: 20px;
     box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 50%;
+    margin-bottom: 5%;
     justify-content: center;
-    transform: translate(-50%, -5%);
-    margin-top: 10%;
-    margin-bottom: 10%;
+    transform: translate(-50%, 5%);
+    padding-top: 100px; 
 }
 .publication-caract{
     display:table-cell;
     vertical-align:middle;
     padding: 66px;
     text-align:center;
-   
+
     box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1);
     
 }
 .publication-descr{
-   
-
     background-color: rgb(251, 251, 251);
     padding: 66px;
     padding-left: 150px;
     text-align:center;
-
-   
 }

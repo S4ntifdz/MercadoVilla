@@ -38,9 +38,8 @@
         <form method="post">
         {% csrf_token %}
               <h2>Bienvenido</h2>
-              <div class="inputbox">Username:<ion-icon name="mail-outline">User</ion-icon>
+              <div class="inputbox" ><h1 class = "input-text">Username</h1><ion-icon name="mail-outline">User</ion-icon>
               {{ login_form.username }}
-              
               </div>
               <div class="inputbox">Password:<ion-icon name="lock-closed-outline"></ion-icon>
                 {{ login_form.password }}

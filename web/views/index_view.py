@@ -11,7 +11,7 @@ class IndexView(View):
         template = loader.get_template("products.html") 
         user = request.user
         varios = StockProduct.objects.all()
-        qt_cart = CartItem.objects.filter(cart__user=user).count()
+        # qt_cart = CartItem.objects.filter(cart__user=user).count()
         
         if user.is_anonymous:
             products = varios
@@ -22,7 +22,7 @@ class IndexView(View):
         context = {
             "products": products,
             "varios": varios,
-            "qt_cart": qt_cart,
+            # "qt_cart": qt_cart,
         }
         return HttpResponse(template.render(context, request))
     

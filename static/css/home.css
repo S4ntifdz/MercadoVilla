@@ -847,6 +847,7 @@ ion-icon {
 
 /* login sacado de otro html */
 .form-container {
+  padding-top: 100px;
   padding-bottom: -50px;
 }
 .form-box {
@@ -1155,6 +1156,8 @@ section {    /* CONTENIDO del recuadro central de ingresar */
 
 
 
-
+.input-text{
+  font: Open Sans, Impact;
+}
 
 
