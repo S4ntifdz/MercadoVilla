@@ -9,6 +9,8 @@
     margin-left: 50%;
     justify-content: center;
     transform: translate(-50%, -5%);
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 .publication-caract{
     display:table-cell;

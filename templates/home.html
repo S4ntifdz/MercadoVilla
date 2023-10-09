@@ -132,7 +132,7 @@
       <input type="checkbox" id="nav-check">
       <div class="nav-header">
         <div class="nav-title">
-            <a href="/web/"><button type="button"class="icon-button"id="python-button" data-lang="python">
+            <a href="/web/"><button type="button"class="icon-button-nav"id="python-button" data-lang="python">
               <ion-icon name="home"></ion-icon></button></a>
 {% comment %} .............................. {% endcomment %}
 
@@ -147,12 +147,21 @@
           <span><a href="{%url 'chat' %}"><i class="fa fa-envelope"></i> Mensajes</a></span>
         </label>
       </div>
+      
+      <div class="width-50">
+        <input class="search-textbox" type="text"
+          Placeholder="Busqueda por titulo o autor">
+        <button class="search-button">
+          <i aria-hidden="true"><ion-icon name="search-outline"></ion-icon>
+          </i>
+        </button>
+      </div>
       <div class="nav-links">
           {% if user.is_authenticated %}
           
             <a href="/user/"><i class="fas fa-user-circle" aria-hidden="true"></i>Perfil de {{ user.username |capfirst }}</a>
             <a href="{%url 'cart'%}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Carro 
-              {% if qt_cart > 0 %}
+            {% if qt_cart > 0 %}
               ({{qt_cart}})
             {%else%}
             {%endif%}
