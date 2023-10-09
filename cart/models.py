@@ -30,6 +30,7 @@ class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)  
     product = models.ForeignKey(StockProduct, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
+
     @property
     def total_price(self):
         return self.quantity * self.product.price
@@ -40,3 +41,7 @@ class CartItem(models.Model):
     def save(self, *args, **kwargs):
         self.cart.update_cart_total()
         super().save(*args, **kwargs)
+        
+    @property
+    def qt_items(self):
+        return self.cart.cartitem_set.count()
