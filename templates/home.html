@@ -53,45 +53,9 @@
     {% comment %} <!---------- TTERMINA TOPE DEL HADER --------->
 
     <!---------- EMPIEZA SEARCH PANEL ---------> {% endcomment %}
-    <div class="width-100 search-panel">
+    <div class="width-100">
       <div class="container">
-        <div class="width-20">
-          <img src="{% static 'img/LOGOVECTORIZADOPNG.png' %}" class="logo-img"
-            alt="[Logotipo]">
-        </div>
-        <div class="width-50">
-          <input class="search-textbox" type="text"
-            Placeholder="Busqueda por titulo o autor">
-          <button class="search-button">
-            <i aria-hidden="true"><ion-icon name="search-outline"></ion-icon>
-            </i>
-          </button>
-        </div>
-        <div class="width-30">
-
-          <!-- seccion del carro -->
-
-          {% comment %} <ul class="cart-sect">
-            {% if user.is_authenticated %}
-            <li>
-              <a href="/user/">Perfil de {{ user.username |capfirst }}</a>
-            </li>
-            <li>
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              <a href="{%url 'cart'%}"> Carro (0)</a>
-            </li>
-            <li>
-              <i class="fa fa-heart-o" aria-hidden="true"></i>
-              <a class="head1mr" href="#">Lista de deseos </a>
-            </li>
-            {% else %}
-            <li>
-              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <a href="/login/"> Iniciar sesion </a>
-            </li>
-            {% endif %}
-          </ul> {% endcomment %}
-        </div>
+        
       </div>
     </div>
     {% comment %} <!---------- TERMINA SEARCH PANEL --------->
@@ -262,7 +226,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="{% static 'img/logo_vale2.jpg' %}" class="logo-img" alt="[Logotipo]">
+            <img src="{% static 'img/LOGOVECTORIZADOPNG.png' %}" class="logo-img" alt="[Logotipo]">
           </div>
           <div class="footer-links">
             <ul class="footer-menu">

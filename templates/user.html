@@ -3,8 +3,9 @@
 
 {% comment %} aca empieza la seccion del usuario {% endcomment %}
 {%block content%}
-<div class="title"> <h1>Perfil de {{ user.username }} </h1></div>
 <div class="profile-card">
+  
+<div class="title"> <h1>Perfil de {{ user.username }} </h1></div>
   <div class="profile-description">
     
     <br><br><br><br>
@@ -13,7 +14,7 @@
     <br>
     <div class="div1"> <h3> Email: {{ user.email }} </h1> </div><br>
       <div class="div1"> <h3> Nombre: {{ user.first_name }} </h1> </div><br>
-      <div class="div1"> <h3> Apellido: {{ user.second_name }}</div><br>
+      <div class="div1"> <h3> Apellido: {{ user.last_name }}</div><br>
     <div class="div1"> <h3> Ultimo acceso: {{ user.last_login|date:"d-m-Y" }}
       </h1> </div><br>
     <div class="div1"> <h3> Rubro de interes: {{ user.business_line_interes }}
@@ -26,7 +27,7 @@
   </div>
 </div>
 {% comment %} aca TERMINA la seccion del usuario {% endcomment %}
-<a href="{% url 'logout' %}"><button type="button"class="icon-button"id="python-button" data-lang="python">
+<a href="{% url 'logout' %}"><button type="button"class="icon-button-user"id="python-button" data-lang="python">
   <ion-icon name="log-out-outline"></ion-icon>CERRAR SESION</button></a>
 
 {%endblock content%}

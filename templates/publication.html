@@ -27,19 +27,17 @@
     </p><br>
     <h3>Descripcion de producto:</h3>
     <div class = "publication-descr">
-    <p >
-        <br>
-        <h3>{{publication_product.description}}</h3>
+    <p><br>
+    <h3>{{publication_product.description}}</h3>
     </p>
 </div>
-    <input type="text" value="{{publication_product.pk}}" name="id" hidden>
-    
-    <input type="number" name="qt" >
+    <input type="text" value="{{publication_product.pk}}" name="id" hidden>    
+    <input type="number" name="qt" Placeholder="Cantidad" value=1 >
     <br><br><br>
     <button type="submit"class="icon-button"id="python-button" ><ion-icon name="bag-add-sharp"></ion-icon></button>
-    <a href="{%url 'comunication' %}?item={{publication_product.pk}}"> 
-        <button type="button"class="icon-button"id="python-button" data-lang="python">
-            <ion-icon name="help-circle-sharp"></ion-icon></button></a>
+    <a href="{%url 'comunication' %}?item={{publication_product.pk}}"> <br><br>
+    <button type="button"class="icon-button"id="python-button" data-lang="python">
+    <ion-icon name="help-circle-sharp"></ion-icon></button></a>
     
     {% if messages %}
     <ul class="messages">

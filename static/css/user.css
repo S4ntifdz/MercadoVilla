@@ -11,13 +11,16 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 50%;
     transform: translate(-50%, -5%);
+    margin-bottom: 1%;
+    margin-top: 5%;
+    border: #ff00b7 3px solid;
 }
 
 /* Estilo base para pantallas más grandes */
 @media screen and (min-width: 768px) {
     .profile-card {
-        width: 300px; /* Aumenta el ancho en pantallas más grandes */
-        height: 400px; /* Ajusta la altura en pantallas más grandes */
+        width: 500px; /* Aumenta el ancho en pantallas más grandes */
+        height: 600px; /* Ajusta la altura en pantallas más grandes */
     }
 }
 

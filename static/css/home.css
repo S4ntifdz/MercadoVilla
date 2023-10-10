@@ -18,7 +18,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: fixed;
 background-size: cover; */
 
-background-color: #060420;
+background-color: #06042000;
 background-image: url('../img/low-poly-grid-haikei (1).svg');
 background-attachment: fixed;
 background-size: cover;
@@ -96,7 +96,7 @@ html {
 }
 
 .width-100 {
-  width: 100%;
+  width: 100%; 
   float: left;
   background-color: var(--color3);
   box-shadow: #000000 10px 0px 10px;
@@ -677,15 +677,12 @@ html {
 
 /**********  Footer-Section empieza  **********/
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 .footer {
   font-size: 18px;
   width: 100%;
+  height: 20vh;
   background-color:var(--color4);
   color: #fff;
   padding: 30px 0;
@@ -694,6 +691,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  position:relative;
+  left:0px;
+  bottom:0px;
 }
 
 .container {
@@ -745,6 +745,19 @@ html {
 
 /* ....................ionicon.................. */
 
+.icon-button-user {
+  background-color: #ccc;
+  border: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  border-color: rgb(7, 7, 7);
+  cursor: pointer;
+  font-size: 10px;
+  margin-left:47%;
+  margin-bottom: 2%;
+  margin-top: 2px;
+  position:relative;
+}
 .icon-button {
   background-color: #ccc;
   border: 1px;
@@ -1028,9 +1041,10 @@ section {    /* CONTENIDO del recuadro central de ingresar */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #111111;
+  background-color: #0d0d0d30;
   position: relative;
   border: none;
+  border: #000000 1px solid;
   
 }
 
@@ -1068,7 +1082,7 @@ section {    /* CONTENIDO del recuadro central de ingresar */
 }
 
 .nav  .nav-links  a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 253, 253, 0.935);
 }
 
 .nav  #nav-check {
@@ -1093,7 +1107,7 @@ section {    /* CONTENIDO del recuadro central de ingresar */
     border-top-right-radius: 10px;
   }
   .nav  .nav-btn  label:hover,.nav  #nav-check:checked ~ .nav-btn  label {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 254, 254, 0.3);
     cursor: pointer;
   }
   .nav  .nav-btn  label  span {
@@ -1107,7 +1121,7 @@ section {    /* CONTENIDO del recuadro central de ingresar */
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #333;
+    background-color: #fffcfc;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -1157,7 +1171,12 @@ section {    /* CONTENIDO del recuadro central de ingresar */
 
 
 .input-text{
-  font: Open Sans, Impact;
+  font-family:Roboto,
+  sans-serif,
+  arial;
+  font-size: 14px;
+  color: #242424;
+  font-weight: 400;
 }
 
 
