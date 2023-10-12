@@ -2,7 +2,7 @@
 	height: 600px;
 	width: 500px;
 	border: 1px solid #ddd;
-	background: #f1f1f1;
+	background: #504d4d;
 	overflow-y: scroll;
 
 }
@@ -21,14 +21,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
+    background-color: #090909fe;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border: 1px solid #6c0000;
     margin-left: 50%;
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
     transform: translate(-50%, 0%);
-    
 }
 
 /* Estilo base para pantallas más grandes */

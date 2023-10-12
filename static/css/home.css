@@ -19,7 +19,7 @@ background-attachment: fixed;
 background-size: cover; */
 
 background-color: #06042000;
-background-image: url('../img/low-poly-grid-haikei (1).svg');
+background-image: url('../img/circle-scatter-haikei.svg');
 background-attachment: fixed;
 background-size: cover;
 }
@@ -35,7 +35,7 @@ background-size: cover;
 --color2 : #027fe9 ;
 --color1 : #5015bd ; */
 
---color1 : #6a6868 ;
+--color1 : #00f8f886 ;
 --color2 : #ee7e4c ;
 --color3 : #83828272 ;
 --color4 : #111010 ;
@@ -46,10 +46,10 @@ background-size: cover;
 .slider {
 
   display: flex;
-  background-color: #dadada;
+  background-color: #887470;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ffffff;
+  border: 1px solid #1a1a1a;
   margin-bottom: 100px;
 
 }
@@ -486,9 +486,10 @@ html {
 }
 
 .product-img {
-  width: 100px;
-  height: 100px;
+  max-width: 150px;
+  max-height: 260px ;
   border: #2b304a 1px solid;
+  
 }
 
 .product-img-center {
@@ -496,7 +497,9 @@ html {
 }
 
 .product-border {
-  border: 10px solid #d1d1d1;
+  height: 310px;
+  width: 210px;
+  border: 5px solid #000000;
   padding: 20px;
 }
 .product-card{
@@ -506,7 +509,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0;
+  background-color: #ffffffbc;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 }
@@ -568,6 +571,7 @@ html {
 .product-price {
   margin-top: 15px;
 }
+
 
 /**********   Product-Section termina  **********/
 /* **************** CAROUSEL EMPIEZA ******************** */
@@ -1041,10 +1045,9 @@ section {    /* CONTENIDO del recuadro central de ingresar */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0d0d0d30;
+  background-color: #9d9d9d30;
   position: relative;
-  border: none;
-  border: #000000 1px solid;
+
   
 }
 
