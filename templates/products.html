@@ -3,16 +3,23 @@
 
 {% block content %}
 {% load humanize %}
-
-
+<br><br><br><br><br><br><br><br><br><br>
+{% if not user.is_authenticated  %}
+<h1 class = "text-not-authenticated">Inicie sesion para ver todos nuestros productos</h1>
+{%endif%}
+{% if user.is_authenticated  %}
+<h1 class = "text-categories"> Productos de categoria
+    {{user.business_line_interes}} : </h1>
+{% endif %}
+<br><br><br><br><br>
 <div class="carousel-container">
 <div class="carousel">
 <!-- Primer slide -->
 <div class="slide">
 {% csrf_token %}
 {% if user.is_authenticated  %}
-<h1 class = "title-general"> Productos de categoria
-     {{user.business_line_interes}} que podrían interesarte: </h2>
+{% comment %} <h1 class = "text-categories"> Productos de categoria
+     {{user.business_line_interes}} : </h1> {% endcomment %}
 
 {% for p in products%}
         <div class="width-25">
@@ -59,12 +66,13 @@
 {% endfor %}
 </div>
 </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<br><br><br>
-<h1 class = "title-generalI">Otras categorias </h2>
+<h1 class = "text-categories">Otras categorias </h2>
 {% endif %}
 
-<div class="carousel-containerII">
+<div class="carousel-container ">
     <div class="carousel">
     <!-- Primer slide -->
     <div class="slide">

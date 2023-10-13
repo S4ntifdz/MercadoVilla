@@ -1,0 +1,14 @@
+.text-categories{
+    font: 5.5em/1 Open Sans, Impact;
+    color: rgba(9, 9, 9, 0.379);
+    -webkit-text-stroke: 0.5px rgb(235, 235, 235);
+    
+}
+
+.text-not-authenticated{
+    margin-left: 15%;
+    font: 4.5em/1 Open Sans, Impact;
+    color: rgba(9, 9, 9, 0.379);
+    -webkit-text-stroke: 2.5px rgb(255, 246, 246);
+    
+}
