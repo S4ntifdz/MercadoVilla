@@ -489,8 +489,8 @@ html {
 }
 
 .product-img {
-  max-width: 150px;
-  max-height: 260px ;
+  max-width: 170px;
+  max-height: 150px;
   border: #2b304a 1px solid;
   
 }
@@ -529,7 +529,7 @@ html {
 .product-rating {
   color: #FFC315;
   font-size: 14px;
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 .product-rating span {
@@ -572,7 +572,7 @@ html {
 }
 
 .product-price {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 
